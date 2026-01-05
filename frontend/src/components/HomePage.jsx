@@ -4,9 +4,8 @@ export default function HomePage({userData}){
         <>
         <div className="homepage-container">
         <h1>Welcome to HomePage</h1>
-        <p>{userData.name}</p>
-        <p>{userData.gmail}</p>
+        <p>{userData?.name}</p>
         </div>
         </>
     );
-}
+}     
