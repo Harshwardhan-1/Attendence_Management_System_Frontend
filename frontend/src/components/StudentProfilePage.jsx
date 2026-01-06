@@ -30,7 +30,7 @@ if(response.data.message=== 'user attendence mark successfully'){
 }
     }catch(err){
         if(err.response?.data?.message=== 'Attendence already marked for today'){
-            alert('your attendence for this subject mark successfully');
+            alert('your attendence for this subject for today has been marked successfully');
         }
     }
     }
