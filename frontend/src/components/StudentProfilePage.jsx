@@ -10,8 +10,8 @@ export default function StudentProfilePage({newUserData}){
     const[teacher,setTeacher]=useState('');
 
     const[subjectName,setSubjectName]=useState('');
-    const[subjecTeacher,setSubjectTeacher]=useState('');
-    const [getAllAttendence,setgetAllAttendence]=useState('');
+    const[subjectTeacher,setSubjectTeacher]=useState('');
+    const [getAllAttendence,setgetAllAttendence]=useState([]);
        
     useEffect(()=>{
         const fetch=async()=>{
@@ -46,7 +46,7 @@ if(response.data.message=== 'user attendence mark successfully'){
 
     const handleSubmit=async(e)=>{
         e.preventDefault();
-        const send={subjectName,subjecTeacher};
+        const send={subjectName,subjectTeacher};
         try{
     const response=await axios.post("https://event-managaement-system-backend.onrender.com/api/StudentAttendence/ParticularStudent",send,{withCredentials:true});
     if(response.data.message=== 'User Attendence'){
@@ -95,7 +95,7 @@ if(response.data.message=== 'user attendence mark successfully'){
                 <option value="Rathore">Rathore</option>
             </select>
             <button type='submit'>Submit</button>
-        </form>
+        </form>    
 
 
 
@@ -120,7 +120,7 @@ if(response.data.message=== 'user attendence mark successfully'){
         </form>
 
        
-       {getAllAttendence && getAllAttendence.length>0 &&(
+       {getAllAttendence && getAllAttendence.length>0 &&  (
     <div className="attendance-list">
         <h2>Attendance Records</h2>
         {getAllAttendence.map((att, index)=>(

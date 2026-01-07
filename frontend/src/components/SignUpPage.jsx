@@ -28,6 +28,7 @@ export default function SignUpPage(){
         <>
             <div className="signup-page-container">
             <div className="signup-form-wrapper">
+                <p>Welcome to SignUp Page</p>
         <form onSubmit={handle} className="signup-form">
             <input type="text" placeholder="Enter your name here"  onChange={(e)=>setName(e.target.value)}/>
             <input type="email" placeholder="Enter your email here" onChange={(e)=>setGmail(e.target.value)} />
