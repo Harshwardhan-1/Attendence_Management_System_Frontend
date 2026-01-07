@@ -12,6 +12,7 @@ import {useState} from 'react';
 import {useEffect} from 'react';
 import axios from 'axios';
 import MakeTeacher from './components/MakeTeacher';
+import TeacherPage from './components/TeacherPage';
 function App() {
    useEffect(() => {
   const fetchUser=async()=>{
@@ -42,6 +43,7 @@ function App() {
       <Route path='/StudentProfilePage' element={<StudentProfilePage newUserData={newUserData} />}></Route>
       <Route path='/AdminPage' element={<AdminPage />}></Route>
       <Route path='/MakeTeacher' element={<MakeTeacher />}></Route>
+      <Route path='/TeacherPage' element={<TeacherPage />}></Route>
     </Routes>
     </>
   )
