@@ -1,0 +1,50 @@
+import { useState } from "react";
+import {useEffect} from 'react';
+import axios from 'axios';
+export default function AdminPage(){
+    const [data,setData]=useState([]);
+    useEffect(()=>{
+        const fetch=async()=>{
+            try{
+    const response=await axios.get('https://event-managaement-system-backend.onrender.com/api/all/allUser',{withCredentials:true});
+    setData(response.data.allUser);
+            }catch(err){
+                console.log(err);
+            }
+        };
+        fetch();
+    },[]);
+    const handleDelete=async(gmail)=>{
+        const send={gmail};
+        try{
+const response=await axios.post('https://event-managaement-system-backend.onrender.com/api/all/handleUpdate',send,{withCredentials:true});
+if(response.data.message=== 'Role upadted to Teacher'){
+    alert('role updated');
+}
+        }catch(err){
+            if(err.response?.data?.message=== 'Provide Gmail'){
+                alert('provide gmail');
+            }else if(err.response?.data?.message=== 'user not exist in database'){
+                alert('user not exist');
+            }
+        }
+    }
+    return(
+        <>
+        <h1>I am the admin Harshwardhan Yadav</h1>
+        {data.map((all,index)=>(
+            <div key={index}>
+                <p>{all.name}</p>
+                <p>{all.gmail}</p>
+                <p>{all.role}</p>
+                <button onClick={()=>handleDelete(all.gmail)}>Make Teacher</button>
+                <button>Make Admin</button>
+                <button>Add Student</button>
+                <button>Update Student</button>
+                <button>Delete Teacher</button>
+                <button>Update Teacher</button>
+            </div>
+            ))}
+        </>
+    );
+}

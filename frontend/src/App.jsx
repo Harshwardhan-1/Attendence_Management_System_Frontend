@@ -7,6 +7,7 @@ import OtpVerify from './components/OtpVerify';
 import NewPassword from './components/NewPassword';
 import MakeStudentProfile from './components/MakeStudentProfile';
 import StudentProfilePage from './components/StudentProfilePage';
+import AdminPage from './components/AdminPage';
 import {useState} from 'react';
 import {useEffect} from 'react';
 import axios from 'axios';
@@ -38,7 +39,7 @@ function App() {
       <Route path='/NewPassword' element={<NewPassword />}></Route>
       <Route path='/MakeStudentProfile' element={<MakeStudentProfile setNewUserData={setNewUserData} />}></Route>
       <Route path='/StudentProfilePage' element={<StudentProfilePage newUserData={newUserData} />}></Route>
-
+      <Route path='/AdminPage' element={<AdminPage />}></Route>
     </Routes>
     </>
   )
