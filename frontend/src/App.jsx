@@ -11,6 +11,7 @@ import AdminPage from './components/AdminPage';
 import {useState} from 'react';
 import {useEffect} from 'react';
 import axios from 'axios';
+import MakeTeacher from './components/MakeTeacher';
 function App() {
    useEffect(() => {
   const fetchUser=async()=>{
@@ -40,6 +41,7 @@ function App() {
       <Route path='/MakeStudentProfile' element={<MakeStudentProfile setNewUserData={setNewUserData} />}></Route>
       <Route path='/StudentProfilePage' element={<StudentProfilePage newUserData={newUserData} />}></Route>
       <Route path='/AdminPage' element={<AdminPage />}></Route>
+      <Route path='/MakeTeacher' element={<MakeTeacher />}></Route>
     </Routes>
     </>
   )

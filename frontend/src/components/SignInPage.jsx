@@ -28,15 +28,14 @@ if(CheckProfile.data.message==='Account already exist'){
             }else if(user.role=== 'Teacher'){
                 try{
     const response=await axios.get('https://event-managaement-system-backend.onrender.com/api/Teacher/TeacherExist',{withCredentials:true});
-    if(response.data.message=== 'Teacher Not Found'){
-        navigate('/MakeTeacher');
+    if(response.data.message=== 'TeacherExist'){
+        navigate('/TeacherPage');
     }
                 }catch(err){
-                    if(err.response?.data?.message=== 'TeacherExist'){
-                        navigate('/TeacherPage');
+                    if(err.response?.data?.message=== 'Teacher Not Found'){
+                        navigate('/MakeTeacher');
                     }
                 }
-                navigate('/TeacherPage');
             }else if(user.role=== 'Admin'){
                 navigate('/AdminPage');
             }
