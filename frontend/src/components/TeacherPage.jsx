@@ -6,7 +6,7 @@ export default function TeacherPage(){
     useEffect(()=>{
         const fetch=async()=>{
             try{
-        const response=await axios.get('https://event-managaement-system-backend.onrender.com/api/Teacher/',{withCredentials:true});
+        const response=await axios.get('https://event-managaement-system-backend.onrender.com/api/Teacher/getTeacher',{withCredentials:true});
         if(response.data.message=== 'ProfileFind'){
             setData(response.data.data);
         }
