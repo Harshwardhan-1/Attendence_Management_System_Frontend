@@ -1,6 +1,7 @@
 import { useState } from "react";
 import {useEffect} from 'react';
 import axios from 'axios';
+import './AdminPage.css';
 export default function AdminPage(){
     const [data,setData]=useState([]);
     useEffect(()=>{
@@ -46,9 +47,10 @@ const response=await axios.post("https://event-managaement-system-backend.onrend
     }
     return(
         <>
+         <div className="admin-page">
         <h1>I am the admin Harshwardhan Yadav</h1>
         {data.map((all,index)=>(
-            <div key={index}>
+            <div  className="admin-card"  key={index}>
                 <p>{all.name}</p>
                 <p>{all.gmail}</p>
                 <p>{all.role}</p>
@@ -60,6 +62,7 @@ const response=await axios.post("https://event-managaement-system-backend.onrend
                 <button>Update Teacher</button>
             </div>
             ))}
+            </div>
         </>
     );
 }

@@ -1,0 +1,84 @@
+.admin-page {
+  padding: 15px;
+  font-family: Arial, sans-serif;
+}
+
+
+.admin-page h1 {
+  text-align: center;
+  font-size: 22px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+
+.admin-page .admin-card {
+  background: #fff;
+  max-width: 400px;
+  margin: 15px auto;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+.admin-page .admin-card p {
+  margin: 6px 0;
+  font-size: 14px;
+  color: #444;
+  word-break: break-word;
+}
+
+
+.admin-page .admin-card button {
+  width: 100%;
+  margin-top: 8px;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  color: #fff;
+}
+
+.admin-page .admin-card button:nth-child(4) {
+  background: #007bff;
+}
+
+.admin-page .admin-card button:nth-child(5) {
+  background: #28a745;
+}
+
+.admin-page .admin-card button:nth-child(6) {
+  background: #ffc107;
+  color: #000;
+}
+
+.admin-page .admin-card button:nth-child(7) {
+  background: #17a2b8;
+}
+
+.admin-page .admin-card button:nth-child(8) {
+  background: #dc3545;
+}
+
+.admin-page .admin-card button:nth-child(9) {
+  background: #6f42c1;
+}
+
+
+@media (max-width: 480px) {
+  .admin-page h1 {
+    font-size: 18px;
+  }
+
+  .admin-page .admin-card {
+    margin: 10px;
+    padding: 12px;
+  }
+
+  .admin-page .admin-card button {
+    font-size: 13px;
+    padding: 9px;
+  }
+}

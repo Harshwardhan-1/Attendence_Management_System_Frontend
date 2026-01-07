@@ -1,5 +1,6 @@
 import {useState} from 'react';
 import axios from 'axios';
+import './MakeTeacher.css';
 import { useNavigate } from 'react-router-dom';
 export default function MakeTeacher(){
     const navigate=useNavigate();
@@ -14,7 +15,7 @@ export default function MakeTeacher(){
 const response=await axios.post('https://event-managaement-system-backend.onrender.com/api/Teacher/checkTeacher',send,{withCredentials:true});
 if(response.data.message=== 'Teacher Created Succeessfully'){
     alert('Teacher created Successfully');
-    navigate('TeacherPage');
+    navigate('/TeacherPage');
 }
         }catch(err){
             if(err.response?.data?.message=== '"FIll details properly'){
@@ -26,14 +27,16 @@ if(response.data.message=== 'Teacher Created Succeessfully'){
     }
     return(
         <>
+          <div className="make-teacher-page">
         <h1>Welcome to Teacher Make Page</h1>
-        <form onSubmit={handle}>
+        <form className="make-teacher-form"  onSubmit={handle}>
             <input type="text" placeholder='Enter your subject here' onChange={(e)=>setSubject(e.target.value)} />
             <input type="text" placeholder='Enter your TeacherId here' onChange={(e)=>setTeacherId(e.target.value)} />
             <input type="text" placeholder='Enter your Department here' onChange={(e)=>setDepartment(e.target.value)} />
             <input type="text" placeholder='Enter your section here' onChange={(e)=>setSection(e.target.value)} />
             <button type='submit'>Submit</button>
         </form>
+        </div>
         </>
     );
 }

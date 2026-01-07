@@ -1,6 +1,7 @@
 import { useState} from "react";
 import { useEffect } from "react";
 import axios from "axios";
+import './TeacherPage.css';
 export default function TeacherPage(){
     const [data,setData]=useState([]);
     useEffect(()=>{
@@ -20,14 +21,17 @@ export default function TeacherPage(){
     },[]);
     return(
         <>
+          <div className="teacher-page">
         <h1>This Is Teacher Page</h1>
-                <p>{data?.name}</p>
-                <p>{data?.gmail}</p>
-                <p>{data?.teacherId}</p>
-                <p>{data?.subject}</p>
-                <p>{data?.department}</p>
-                <p>{data?.section}</p>
-    
+        <div className="teacher-card">
+                <p><span>Name:</span>{data?.name}</p>
+                <p><span>Email:</span>{data?.gmail}</p>
+                <p><span>Teacher ID</span>{data?.teacherId}</p>
+                <p><span>Subject:</span>{data?.subject}</p>
+                <p><span>Department:</span>{data?.department}</p>
+                <p><span>Section:</span>{data?.section}</p>
+                </div>   
+                </div>
         </>
     );
 }
