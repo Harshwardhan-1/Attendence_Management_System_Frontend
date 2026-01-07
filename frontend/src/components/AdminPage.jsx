@@ -29,6 +29,21 @@ if(response.data.message=== 'Role upadted to Teacher'){
             }
         }
     }
+    const handleAdmin=async(gmail)=>{
+        const send={gmail};
+        try{
+const response=await axios.post("https://event-managaement-system-backend.onrender.com/api/all/MakeAdmin",send,{withCredentials:true});
+            if(response.data.message=== 'Make Admin'){
+                alert('Make him admin');
+            }
+        }catch(err){
+            if(err.response?.data?.message=== 'gmail not found'){
+                alert('gmail is necessary');
+            }else if(err.response?.data?.message=== 'gmail not found in database'){
+                alert('gmail not found in database');
+            }
+        }
+    }
     return(
         <>
         <h1>I am the admin Harshwardhan Yadav</h1>
@@ -38,7 +53,7 @@ if(response.data.message=== 'Role upadted to Teacher'){
                 <p>{all.gmail}</p>
                 <p>{all.role}</p>
                 <button onClick={()=>handleDelete(all.gmail)}>Make Teacher</button>
-                <button>Make Admin</button>
+                <button onClick={()=>handleAdmin(all.gmail)}>Make Admin</button>
                 <button>Add Student</button>
                 <button>Update Student</button>
                 <button>Delete Teacher</button>
