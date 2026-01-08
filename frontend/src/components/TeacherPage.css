@@ -1,56 +1,78 @@
 .teacher-page {
-  min-height: 100vh;
-  padding: 20px;
-  background: #f4f6f8;
-  font-family: Arial, sans-serif;
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 15px;
+    font-family: Arial, sans-serif;
+    color: #333;
 }
 
-
 .teacher-page h1 {
-  text-align: center;
-  font-size: 22px;
-  margin-bottom: 20px;
-  color: #333;
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 25px;
 }
 
 
 .teacher-card {
-  max-width: 400px;
-  margin: 0 auto;
-  background: #ffffff;
-  padding: 18px;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    margin-bottom: 25px;
 }
 
-
 .teacher-card p {
-  margin: 8px 0;
-  font-size: 14px;
-  color: #444;
-  word-break: break-word;
+    margin: 8px 0;
 }
 
 .teacher-card p span {
-  font-weight: 600;
-  color: #222;
+    font-weight: 600;
+    color: #00796b;
+}
+
+.teacher-card button {
+    margin-top: 15px;
+    padding: 10px 18px;
+    background-color: #00796b;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.teacher-card button:hover {
+    background-color: #26a69a;
+}
+
+.students-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+
+.student-card {
+    background: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+}
+
+.student-card p {
+    margin: 5px 0;
+    font-size: 0.95rem;
+}
+
+.student-card p:first-child {
+    font-weight: 600;
 }
 
 
 @media (max-width: 480px) {
-  .teacher-page {
-    padding: 15px;
-  }
-
-  .teacher-page h1 {
-    font-size: 18px;
-  }
-
-  .teacher-card {
-    padding: 14px;
-  }
-
-  .teacher-card p {
-    font-size: 13px;
-  }
+    .teacher-page {
+        padding: 10px;
+    }
+    .teacher-card, .student-card {
+        padding: 12px;
+    }
 }
