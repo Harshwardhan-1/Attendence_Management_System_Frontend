@@ -45,6 +45,22 @@ const response=await axios.post("https://event-managaement-system-backend.onrend
             }
         }
     }
+    const handleEveryone=async(gmail)=>{
+        const send={gmail};
+        try{
+            const response=await axios.post('https://event-managaement-system-backend.onrender.com/api/all/DeleteAnyone',send,{withCredentials:true});
+            if(response.data.message=== 'user deleted successfully'){
+                alert('delete successfully');
+                fetch();
+            }
+        }catch(err){
+            if(err.response?.data?.message=== 'provide gmail'){
+                alert('provide gmail');
+            }else if(err.response?.data?.message=== 'user not found'){
+                alert('user not found');
+            }
+        }
+    }
     return(
         <>
          <div className="admin-page">
@@ -59,7 +75,7 @@ const response=await axios.post("https://event-managaement-system-backend.onrend
                 <button>Add Student</button>
                 <button>Update Student</button>
                 <button>Delete Teacher</button>
-                <button>Update Teacher</button>
+                <button onClick={()=>handleEveryone(all.gmail)}>Delete Anyone</button>
             </div>
             ))}
             </div>
