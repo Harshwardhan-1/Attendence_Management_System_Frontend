@@ -75,8 +75,9 @@ if(response.data.message=== 'attendence mark successfully'){
         const send={name,gmail};
         try{
 const response=await axios.post('https://event-managaement-system-backend.onrender.com/api/TeacherAttendence/getAttendence',send,{withCredentials:true});
-if(response.data.message=== 'getStudentAttendence');
+if(response.data.message=== 'getStudentAttendence'){
 setShowAttendence(response.data.data);
+}
         }catch(err){
             if(err.response?.data?.message=== 'provide detail'){
                 alert('provide proper detail');
