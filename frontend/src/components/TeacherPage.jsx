@@ -4,6 +4,7 @@ import axios from "axios";
 import './TeacherPage.css';
 export default function TeacherPage(){
     const [data,setData]=useState([]);
+    const [student,setStudent]=useState([]);
     useEffect(()=>{
         const fetch=async()=>{
             try{
@@ -19,6 +20,23 @@ export default function TeacherPage(){
         };
         fetch();
     },[]);
+    
+
+    const handleStudents=async(department,section)=>{
+        const send={department,section};
+        try{
+        const response=await axios.post('https://event-managaement-system-backend.onrender.com/api/Student/getParticularStudent',send,{withCredentials:true});
+        if(response.data.message=== 'Got ALL Student'){
+            setStudent(response.data.data);
+        }
+        }catch(err){
+            if(err.response?.data?.message=== 'no student found'){
+                alert('No Student Found');
+            }else if(err.response?.data?.message=== 'provide department and section and gmail'){
+                alert('provide proper detail');
+            }
+        }
+    }
     return(
         <>
           <div className="teacher-page">
@@ -30,8 +48,20 @@ export default function TeacherPage(){
                 <p><span>Subject:</span>{data?.subject}</p>
                 <p><span>Department:</span>{data?.department}</p>
                 <p><span>Section:</span>{data?.section}</p>
+    <button onClick={()=>handleStudents(data?.department,data?.section)}>Show All Students of this class</button>
                 </div>   
                 </div>
+
+                {student.map((all,index)=>(
+                    <div key={index}>
+                        <p>{all?.userId?.name}</p>
+                        <p>{all?.userId?.gmail}</p>
+                        <p>{all?.rollNo}</p>
+                        <p>{all?.branch}</p>
+                        <p>{all.section}</p>
+                        <p>{all.semester}</p>
+                    </div>
+                ))}
         </>
     );
 }

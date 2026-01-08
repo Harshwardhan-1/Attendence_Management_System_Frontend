@@ -32,7 +32,7 @@ if(response.data.message=== 'Student data saved'){
         <div className="make-student-page">
         <form className="student-form" onSubmit={handleSubmit}>
 <input type="text" placeholder="Enter your rollNo here" name="rollNo" onChange={(e)=>setRollNo(e.target.value)} />
-<input type="text" placeholder="Enter your branch here" name="branch" onChange={(e)=>setBranch(e.target.value)} />
+<input type="text" placeholder="Enter your department here" name="department" onChange={(e)=>setBranch(e.target.value)} />
 <input type="text" placeholder="Enter your section here" name="section" onChange={(e)=>setSection(e.target.value)} />
 <input type="text" placeholder="Enter your semester here" name="semester" onChange={(e)=>setSemester(e.target.value)} />
 <input type="number"  placeholder="Enter your phoneNo here" name="phone" onChange={(e)=>setPhone(e.target.value)}/>
