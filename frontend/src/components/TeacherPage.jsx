@@ -118,7 +118,6 @@ setShowAttendence(response.data.data);
                 ))}
                 </div>
                 </div>
-
                 {showAttendence.map((all,index)=>(
                     <div key={index} className="attendance-card">
                         <strong>{index+1}</strong>

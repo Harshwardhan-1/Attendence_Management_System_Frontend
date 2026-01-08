@@ -24,6 +24,8 @@ if(response.data.message=== 'Student data saved'){
                 alert('fill complete details');
             }else if(err.response?.data?.message=== 'Profile already Exist'){
                 alert('Profile already Exist');
+            }else if(err.response?.data?.message=== 'Enter valid mobile number'){
+                alert('enter valid mobile number');
             }
         }
     }
