@@ -1,106 +1,126 @@
 .student-page-container {
-    font-family: 'Arial', sans-serif;
-    background-color: #f5f6fa;
-    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 20px;
     min-height: 100vh;
+    background-color: #121212; 
+    color: #fff;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 
-.student-page-container .student-profile {
+.student-profile {
+    width: 100%;
     max-width: 500px;
-    margin: 30px auto;
-    background-color: #ffffff;
+    background-color: #1e1e1e;
     padding: 25px 20px;
     border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    margin-bottom: 30px;
     text-align: center;
 }
 
-.student-page-container .student-profile h1 {
+.student-profile h1 {
+    font-size: 28px;
     margin-bottom: 20px;
-    font-size: 1.8rem;
-    color: #2f3640;
 }
 
-.student-page-container .student-profile p {
+.student-profile p {
     margin: 6px 0;
-    font-size: 1rem;
-    color: #333;
+    font-size: 16px;
 }
 
-
-.student-page-container form {
-    max-width: 500px;
-    margin: 20px auto;
+form {
     display: flex;
     flex-direction: column;
     gap: 15px;
+    width: 100%;
+    max-width: 500px;
+    background-color: #1e1e1e;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    margin-bottom: 30px;
 }
 
-.student-page-container form select,
-.student-page-container form button {
-    padding: 10px 15px;
-    font-size: 1rem;
+form select {
+    padding: 12px 15px;
     border-radius: 8px;
-    border: 1px solid #dcdde1;
+    border: 2px solid #444;
+    background-color: #121212;
+    color: #fff;
+    font-size: 16px;
     outline: none;
-    transition: all 0.2s ease-in-out;
+    transition: border-color 0.3s, box-shadow 0.3s;
 }
 
-.student-page-container form select:focus {
-    border-color: #4cd137;
-    box-shadow: 0 0 5px rgba(76, 209, 55, 0.5);
+form select:focus {
+    border-color: #00ff00;
+    box-shadow: 0 0 8px #00ff00;
 }
 
-.student-page-container form button {
-    background-color: #4cd137;
-    color: white;
-    cursor: pointer;
+form button {
+    padding: 12px 15px;
+    background-color: #00ff00;
+    color: #000;
+    font-weight: 600;
+    font-size: 16px;
     border: none;
-    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
 }
 
-.student-page-container form button:hover {
-    background-color: #44bd32;
-}
-
-@media screen and (max-width: 600px) {
-    .student-page-container .student-profile,
-    .student-page-container form {
-        margin: 15px;
-        padding: 20px;
-    }
-
-    .student-page-container .student-profile h1 {
-        font-size: 1.5rem;
-    }
-
-    .student-page-container form select,
-    .student-page-container form button {
-        font-size: 0.9rem;
-        padding: 8px 12px;
-    }
+form button:hover {
+    background-color: #00cc00;
+    transform: scale(1.02);
 }
 
 
-
-
-.student-page-container .attendance-list {
-    max-width: 600px;
-    margin: 20px auto;
-    background: #fff;
-    padding: 15px;
-    border-radius: 10px;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+.attendance-list {
+    width: 100%;
+    max-width: 500px;
+    background-color: #1e1e1e;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.5);
 }
 
-.student-page-container .attendance-list h2 {
+.attendance-list h2 {
     text-align: center;
-    margin-bottom: 10px;
-    color: #2f3640;
+    margin-bottom: 15px;
 }
 
-.student-page-container .attendance-list p {
+.attendance-list p {
     margin: 8px 0;
-    font-size: 0.95rem;
+    font-size: 15px;
+}
+
+@media (max-width: 480px) {
+    .student-page-container {
+        padding: 20px 10px;
+    }
+
+    .student-profile, form, .attendance-list {
+        padding: 15px;
+    }
+
+    .student-profile h1 {
+        font-size: 24px;
+    }
+
+    form button, form select {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .attendance-list h2 {
+        font-size: 20px;
+    }
+
+    .attendance-list p {
+        font-size: 14px;
+    }
 }

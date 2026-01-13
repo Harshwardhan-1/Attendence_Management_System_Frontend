@@ -34,6 +34,7 @@ if(response.data.message=== 'Student data saved'){
     return(
         <>
         <div className="make-student-page">
+         <h1>Enter your details here</h1>
         <form className="student-form" onSubmit={handleSubmit}>
 <input type="text" placeholder="Enter your rollNo here" name="rollNo" onChange={(e)=>setRollNo(e.target.value)} />
 <input type="text" placeholder="Enter your department here" name="department" onChange={(e)=>setBranch(e.target.value)} />

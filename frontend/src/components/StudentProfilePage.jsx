@@ -66,7 +66,7 @@ if(response.data.message=== 'user attendence mark successfully'){
          <div className="student-profile">
         <h1>Welcome to your profile </h1>
         <p>Name:  {profileData.userId?.name}</p>
-        <p>Email: {profileData.userId?.gmail}</p>
+        <p>Email:  {profileData.userId?.gmail}</p>
         <p>RollNo: {profileData?.rollNo}</p>
         <p>Section: {profileData?.section}</p>
         <p>Semester: {profileData?.semester}</p>
@@ -77,10 +77,11 @@ if(response.data.message=== 'user attendence mark successfully'){
         <form onSubmit={handle}>
             <select onChange={(e)=>setSubject(e.target.value)}>
                 <option value="Select Subject">Select Subject</option>
-                <option value="C++">C++</option>
-                <option value="java">java</option>
-                <option value="rust">rust</option>
-                <option value="golang">golang</option>
+                <option value="Environment">Environment Management And Sustainability</option>
+                <option value="Database">Database Mangaement Systems</option>
+                <option value="Algorithm">Analysis and Design Of Algorithm</option>
+                <option value="AI Fundamentals">AI Fundamentals</option>
+                <option value="Advanced Java">Advanced Java</option>
             </select>
             <select onChange={(e)=>setAttendence(e.target.value)}>
                 <option value="P/A">Select P/A</option>
@@ -89,32 +90,35 @@ if(response.data.message=== 'user attendence mark successfully'){
             </select>
             <select onChange={(e)=>setTeacher(e.target.value)}>
                 <option value="Select Teacher">Select Teacher</option>
-                <option value="Harsh">Harsh</option>
-                <option value="Jay">Jay</option>
-                <option value="Yadav">Yadav</option>
-                <option value="Rathore">Rathore</option>
+                <option value="Divya Tomar">Dr.Divya Tomar Sir</option>
+                <option value="Shweta Pandey">Shweta Pandey Mam</option>
+                <option value="Pooja">Pooja Deshpanda Mam</option>
+                <option value="Preent Jain">Preet Jain Sir</option>
+                <option value="Vishwas">Vishwas Dixit</option>
             </select>
             <button type='submit'>Submit</button>
         </form>    
 
 
-
+      <h1>See your Attendence </h1>
 
         <form onSubmit={handleSubmit}>
             <select onChange={(e)=>setSubjectName(e.target.value)}>
                 <option value="Select Subject">Select Subject</option>
-                <option value="C++">C++</option>
-                <option value="java">java</option>
-                <option value="rust">rust</option>
-                <option value="golang">golang</option>
+               <option value="Environment">Environment Management And Sustainability</option>
+                <option value="Database">Database Mangaement Systems</option>
+                <option value="Algorithm">Analysis and Design Of Algorithm</option>
+                <option value="AI Fundamentals">AI Fundamentals</option>
+                <option value="Advanced Java">Advanced Java</option>
             </select>
 
             <select onChange={(e)=>setSubjectTeacher(e.target.value)}>
                 <option value="Select Teacher">Select Teacher</option>
-                <option value="Harsh">Harsh</option>
-                <option value="Jay">Jay</option>
-                <option value="Yadav">Yadav</option>
-                <option value="Rathore">Rathore</option>
+                <option value="Divya Tomar">Dr.Divya Tomar Sir</option>
+                <option value="Shweta Pandey">Shweta Pandey Mam</option>
+                <option value="Pooja">Pooja Deshpanda Mam</option>
+                <option value="Preent Jain">Preet Jain Sir</option>
+                <option value="Vishwas">Vishwas Dixit</option>
             </select>
             <button type='submit'>Submit</button>
         </form>
