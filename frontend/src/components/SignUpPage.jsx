@@ -12,7 +12,7 @@ export default function SignUpPage(){
         e.preventDefault();
         try{
         const send={name,gmail,password};
-        const response=await axios.post("https://event-managaement-system-backend.onrender.com/api/all/getSignUp",send,{withCredentials:true});
+        const response=await axios.post("https://attendence-managaement-system-backend.onrender.com/api/all/getSignUp",send,{withCredentials:true});
         if(response.data.message==="Successfully Login"){
             navigate("/signIn");
         }

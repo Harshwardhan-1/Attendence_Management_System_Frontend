@@ -18,7 +18,7 @@ function App() {
   const fetchUser=async()=>{
     try{
       const res=await axios.get(
-        "https://event-managaement-system-backend.onrender.com/api/all/getUser", { withCredentials: true });
+        "https://attendence-managaement-system-backend.onrender.com", { withCredentials: true });
       setUserData(res.data.user);
     } catch (err) {
       console.log("User not logged in or session expired",err);

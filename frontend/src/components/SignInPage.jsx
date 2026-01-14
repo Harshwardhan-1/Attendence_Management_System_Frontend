@@ -11,12 +11,12 @@ export default function SignInPage({setUserData}){
         e.preventDefault();
         const send={gmail,password};
         try{
-        const response=await axios.post("https://event-managaement-system-backend.onrender.com/api/all/getSignIn",send,{withCredentials:true});
+        const response=await axios.post("https://attendence-managaement-system-backend.onrender.com/api/all/getSignIn",send,{withCredentials:true});
            const user=response.data.data;
             setUserData(user);
             if(user.role=== "Student"){
                 try{
-const CheckProfile=await axios.get('https://event-managaement-system-backend.onrender.com/api/Student/checkProfileExist',{withCredentials:true});
+const CheckProfile=await axios.get('https://attendence-managaement-system-backend.onrender.com/api/Student/checkProfileExist',{withCredentials:true});
 if(CheckProfile.data.message==='Account already exist'){
     navigate('/StudentProfilePage');
        }
@@ -27,7 +27,7 @@ if(CheckProfile.data.message==='Account already exist'){
                 }
             }else if(user.role=== 'Teacher'){
                 try{
-    const response=await axios.get('https://event-managaement-system-backend.onrender.com/api/Teacher/TeacherExist',{withCredentials:true});
+    const response=await axios.get('https://attendence-managaement-system-backend.onrender.com/api/Teacher/TeacherExist',{withCredentials:true});
     if(response.data.message=== 'TeacherExist'){
         navigate('/TeacherPage');
     }

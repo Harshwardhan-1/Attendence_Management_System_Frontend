@@ -9,7 +9,7 @@ export default function ForgotPassword({setPasswordData}){
         e.preventDefault();
         const send={gmail};
         try{
-        const response=await axios.post('https://event-managaement-system-backend.onrender.com/api/all/forgotPassword',send,{withCredentials:true});
+        const response=await axios.post('https://attendence-managaement-system-backend.onrender.com/api/all/forgotPassword',send,{withCredentials:true});
         if(response.data.message=== 'otp send successfully'){
             setPasswordData(response.data.data);
             navigate('/OtpVerify');

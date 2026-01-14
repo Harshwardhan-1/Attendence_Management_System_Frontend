@@ -12,7 +12,7 @@ export default function MakeTeacher(){
         e.preventDefault();
         const send={teacherId,subject,department,section};
         try{
-const response=await axios.post('https://event-managaement-system-backend.onrender.com/api/Teacher/checkTeacher',send,{withCredentials:true});
+const response=await axios.post('https://attendence-managaement-system-backend.onrender.com/api/Teacher/checkTeacher',send,{withCredentials:true});
 if(response.data.message=== 'Teacher Created Succeessfully'){
     alert('Teacher created Successfully');
     navigate('/TeacherPage');

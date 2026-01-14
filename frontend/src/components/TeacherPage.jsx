@@ -10,7 +10,7 @@ export default function TeacherPage(){
     useEffect(()=>{
         const fetch=async()=>{
             try{
-        const response=await axios.get('https://event-managaement-system-backend.onrender.com/api/Teacher/getTeacher',{withCredentials:true});
+        const response=await axios.get('https://attendence-managaement-system-backend.onrender.com/api/Teacher/getTeacher',{withCredentials:true});
         if(response.data.message=== 'ProfileFind'){
             setData(response.data.data);
         }
@@ -32,7 +32,7 @@ export default function TeacherPage(){
     const handleStudents=async(department,section)=>{
         const send={department,section};
         try{
-        const response=await axios.post('https://event-managaement-system-backend.onrender.com/api/Student/getParticularStudent',send,{withCredentials:true});
+        const response=await axios.post('https://attendence-managaement-system-backend.onrender.com/api/Student/getParticularStudent',send,{withCredentials:true});
         if(response.data.message=== 'Got ALL Student'){
             setStudent(response.data.data);
         }
@@ -47,7 +47,7 @@ export default function TeacherPage(){
     const handlePresent=async(name,gmail,section)=>{
         const send={name,gmail,section};
         try{
-    const response=await axios.post('https://event-managaement-system-backend.onrender.com/api/TeacherAttendence/markAttendence',send,{withCredentials:true});
+    const response=await axios.post('https://attendence-managaement-system-backend.onrender.com/api/TeacherAttendence/markAttendence',send,{withCredentials:true});
     if(response.data.message=== 'student attendence successfully marked present'){
         alert('attendence marked successfully');
     }
@@ -63,7 +63,7 @@ export default function TeacherPage(){
     const handleDelete=async(name,gmail,section)=>{
         const send={name,gmail,section};
         try{
-const response=await axios.post('https://event-managaement-system-backend.onrender.com/api/TeacherAttendence/markAbsent',send,{withCredentials:true});
+const response=await axios.post('https://attendence-managaement-system-backend.onrender.com/api/TeacherAttendence/markAbsent',send,{withCredentials:true});
 if(response.data.message=== 'attendence mark successfully'){
     alert('attendence mark successfully');
 }
@@ -80,7 +80,7 @@ if(response.data.message=== 'attendence mark successfully'){
     const handleAttendence=async(name,gmail)=>{
         const send={name,gmail};
         try{
-const response=await axios.post('https://event-managaement-system-backend.onrender.com/api/TeacherAttendence/getAttendence',send,{withCredentials:true});
+const response=await axios.post('https://attendence-managaement-system-backend.onrender.com/api/TeacherAttendence/getAttendence',send,{withCredentials:true});
 if(response.data.message=== 'getStudentAttendence'){
 setShowAttendence(response.data.data);
 }

@@ -14,7 +14,7 @@ export default function MakeStudentProfile({setNewUserData}){
         e.preventDefault();
         const send={rollNo,branch,section,semester,phone};
         try{
-const response=await axios.post('https://event-managaement-system-backend.onrender.com/api/Student/CheckStudent',send,{withCredentials:true});
+const response=await axios.post('https://attendence-managaement-system-backend.onrender.com/api/Student/CheckStudent',send,{withCredentials:true});
 if(response.data.message=== 'Student data saved'){
     setNewUserData(response.data.data);
     navigate('/StudentProfilePage');

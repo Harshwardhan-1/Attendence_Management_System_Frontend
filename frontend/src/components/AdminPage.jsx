@@ -7,7 +7,7 @@ export default function AdminPage(){
     const [search,setSearch]=useState('');
         const fetch=async()=>{
             try{
-    const response=await axios.get('https://event-managaement-system-backend.onrender.com/api/all/allUser',{withCredentials:true});
+    const response=await axios.get('https://attendence-managaement-system-backend.onrender.com/api/all/allUser',{withCredentials:true});
     setData(response.data.allUser);
             }catch(err){
                 console.log(err);
@@ -25,7 +25,7 @@ export default function AdminPage(){
     const handleDelete=async(gmail)=>{
         const send={gmail};
         try{
-const response=await axios.post('https://event-managaement-system-backend.onrender.com/api/all/handleUpdate',send,{withCredentials:true});
+const response=await axios.post('https://attendence-managaement-system-backend.onrender.com/api/all/handleUpdate',send,{withCredentials:true});
 if(response.data.message=== 'Role upadted to Teacher'){
     alert('role updated');
 }
@@ -40,7 +40,7 @@ if(response.data.message=== 'Role upadted to Teacher'){
     const handleAdmin=async(gmail)=>{
         const send={gmail};
         try{
-const response=await axios.post("https://event-managaement-system-backend.onrender.com/api/all/MakeAdmin",send,{withCredentials:true});
+const response=await axios.post("https://attendence-managaement-system-backend.onrender.com/api/all/MakeAdmin",send,{withCredentials:true});
             if(response.data.message=== 'Make Admin'){
                 alert('Make him admin');
             }
@@ -55,7 +55,7 @@ const response=await axios.post("https://event-managaement-system-backend.onrend
     const handleEveryone=async(gmail)=>{
         const send={gmail};
         try{
-            const response=await axios.post('https://event-managaement-system-backend.onrender.com/api/all/DeleteAnyone',send,{withCredentials:true});
+            const response=await axios.post('https://attendence-managaement-system-backend.onrender.com/api/all/DeleteAnyone',send,{withCredentials:true});
             if(response.data.message=== 'user deleted successfully'){
                 alert('delete successfully');
                 fetch();

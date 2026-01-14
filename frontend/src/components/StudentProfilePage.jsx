@@ -16,7 +16,7 @@ export default function StudentProfilePage({newUserData}){
     useEffect(()=>{
         const fetch=async()=>{
             try{
-    const response=await axios.get('https://event-managaement-system-backend.onrender.com/api/Student/CheckProfileExist',{withCredentials:true});
+    const response=await axios.get('https://attendence-managaement-system-backend.onrender.com/api/Student/CheckProfileExist',{withCredentials:true});
     setProfileData(response.data.data);
             }catch(err){
                 console.log("profile not found",err);
@@ -29,7 +29,7 @@ export default function StudentProfilePage({newUserData}){
         e.preventDefault();
         const send={attendence,subject,teacher};
         try{
-const response=await axios.post('https://event-managaement-system-backend.onrender.com/api/StudentAttendence/markAttendence',send,{withCredentials:true});
+const response=await axios.post('https://attendence-managaement-system-backend.onrender.com/api/StudentAttendence/markAttendence',send,{withCredentials:true});
 if(response.data.message=== 'user attendence mark successfully'){
     alert('Attendence marked for current subject');
 }
@@ -48,7 +48,7 @@ if(response.data.message=== 'user attendence mark successfully'){
         e.preventDefault();
         const send={subjectName,subjectTeacher};
         try{
-    const response=await axios.post("https://event-managaement-system-backend.onrender.com/api/StudentAttendence/ParticularStudent",send,{withCredentials:true});
+    const response=await axios.post("https://attendence-managaement-system-backend.onrender.com/api/StudentAttendence/ParticularStudent",send,{withCredentials:true});
     if(response.data.message=== 'User Attendence'){
         setgetAllAttendence(response.data.data);
     }
